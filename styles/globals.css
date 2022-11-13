@@ -27,3 +27,7 @@ a {
     background: black;
   }
 } */
+
+input:focus { 
+  outline: none !important;
+}

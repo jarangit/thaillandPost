@@ -12,7 +12,7 @@ const InputSearch = (props: Props) => {
       <input placeholder='ไปรษณีย์ไทย' className={`text-gray text-sm`}/>
       <div className={` h-full p-2 flex items-center bg-[#EFF1F2]`}>
         <Image
-          src='/img/control.svg'
+          src='/img/icons/control.svg'
           alt=''
           width={20}
           height={20}

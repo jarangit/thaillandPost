@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Button from '../button/button'
 import { IoIosHome } from 'react-icons/io'
 import InputSearch from '../input/inputSearch'
-import { AiOutlineMenuFold } from 'react-icons/ai'
+import { AiFillCaretDown, AiOutlineMenuFold } from 'react-icons/ai'
 type Props = {}
 
 const listMenu = [
@@ -54,7 +54,7 @@ const Menu = (props: Props) => {
           <Button>ลงทะเบียน</Button>
         </div>
         <div className='md:hidden'>
-          <AiOutlineMenuFold size = {30} color = "#002369" />
+          <AiOutlineMenuFold size={30} color="#002369" />
         </div>
       </div>
       <div className={`bg-red p-2 px-6 flex justify-between items-center`}>
@@ -64,8 +64,20 @@ const Menu = (props: Props) => {
             <div className={`text-xs`}>หน้าแรก</div>
           </div>
         </div>
-        <div>
+        <div className={`flex gap-6 items-center`}>
           <InputSearch />
+          <div className={`text-white hidden md:flex gap-1 items-center text-xs`}>
+            <Image
+              src='/img/icons/thailand.svg'
+              alt=''
+              width={20}
+              height={20}
+            />
+            <div>ภาษาไทย</div>
+            <div className={`mt-1`}>
+              <AiFillCaretDown size={10} color="#ffff" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

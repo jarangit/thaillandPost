@@ -6,7 +6,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+        // that is animation class
+        animation: {
+          fade: 'fadeIn 3s ease-in-out',
+        },
+    },
     colors: {
       'red': {
         light: '#F06852',
@@ -14,7 +19,7 @@ module.exports = {
         dark: '#',
       },
       'blue': {
-        light: '#',
+        light: '#B9D2DD',
         DEFAULT: '#002369',
         dark: '#',
       },

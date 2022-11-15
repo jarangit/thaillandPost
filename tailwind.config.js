@@ -29,7 +29,7 @@ module.exports = {
         dark: '#',
       },
       'gray': {
-        light: '#',
+        light: '#D6D6D6',
         DEFAULT: '##9B9898',
         dark: '#707070',
       },

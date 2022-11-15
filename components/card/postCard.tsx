@@ -10,7 +10,7 @@ type Props = {
 
 const PostCard = ({ title, desc, image, createdAt }: Props) => {
   return (
-    <div className={` rounded-2xl shadow-xl cursor-pointer hover:text-blue`}>
+    <div className={` rounded-2xl shadow-lg cursor-pointer hover:text-blue`}>
       <div className={`relative w-full h-[200px] rounded-2xl overflow-hidden`}>
         <Image
           src={image}

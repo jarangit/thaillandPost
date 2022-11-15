@@ -5,15 +5,17 @@ type Props = {
   disabled?: boolean;
   children: React.ReactNode,
   bgColor?: string;
+  w?: string;
 }
 
-const Button = ({ onAction, disabled, children, bgColor }: Props) => {
+const Button = ({ onAction, disabled, children, bgColor, w }: Props) => {
   return (
     <button
       style={{
         backgroundColor: bgColor ?? '#D30D2B',
+        width: w ?? "100px"
       }}
-      className={`w-24 h-12 text-white rounded-md hover:bg-red-light`}
+      className={` h-10 text-white rounded-md hover:bg-red-light`}
       onClick={onAction}
     >
       {children}

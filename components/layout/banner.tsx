@@ -52,14 +52,14 @@ const Banner = (props: Props) => {
 
   return (
     <div className={`myContainer !my-3`}>
-      <div className={`relative w-full !h-fit min-h-[140px] md:min-h-[400px] max-h-[500px]  duration-500 transition-all rounded-2xl overflow-hidden ${showImage ? "opacity-100" : "opacity-0"}`}>
+      <div className={`relative w-full !h-fit min-h-[300px] md:min-h-[400px] max-h-[500px]  duration-500 transition-all rounded-2xl overflow-hidden ${showImage ? "opacity-100" : "opacity-0"}`}>
         {showImage && (
           <div>
             <Image
               src={currentImage.image}
               alt=""
               fill
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: "cover" }}
             />
           </div>
         )}

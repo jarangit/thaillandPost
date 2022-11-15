@@ -1,5 +1,5 @@
 import React from 'react'
-import { mockPost } from '../../constant/posts'
+import { mockPost } from '../../constant/posts.js'
 import PostCard from '../card/postCard'
 
 type Props = {}

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import PostCard from '../components/card/postCard'
 import Banner from '../components/layout/banner'
+import DownloadAndAgencySection from '../components/sections/downloadAndAgencySection'
 import PostSection from '../components/sections/postSection'
 
 export default function Home() {
@@ -9,10 +10,8 @@ export default function Home() {
     <>
       <Banner />
       <PostSection />
-      <div className={`flex flex-col justify-center items-center min-h-screen`}>
-        <div className={`text-blue`}>Thailand Post Project</div>
-        <div>Now Developing Project...</div>
-      </div>
+      <DownloadAndAgencySection />
+    
     </>
   )
 }

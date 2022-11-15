@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
 html,
 body {
   padding: 0;
@@ -36,4 +38,7 @@ input:focus {
   margin: 0 auto;
   overflow:hidden;
   padding: 0 5%;
+}
+.slick-dots li.slick-active button:before {
+  color:#B9D2DD !important;
 }

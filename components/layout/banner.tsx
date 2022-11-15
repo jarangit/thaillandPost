@@ -1,5 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import Image from 'next/image'
+import Slider from 'react-slick'
+
 type Props = {}
 const dataBanner = [
   {
@@ -48,11 +50,17 @@ const Banner = (props: Props) => {
       </div>
     )
   }
-
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
 
   return (
-    <div className={`myContainer !my-3`}>
-      <div className={`relative w-full !h-fit min-h-[300px] md:min-h-[400px] max-h-[500px]  duration-500 transition-all rounded-2xl overflow-hidden ${showImage ? "opacity-100" : "opacity-0"}`}>
+    <div className={`max-w-[1300px] mx-auto my-10 px-3`}>
+      {/* <div className={`relative w-full !h-fit min-h-[300px] md:min-h-[400px] max-h-[500px]  duration-500 transition-all rounded-2xl overflow-hidden ${showImage ? "opacity-100" : "opacity-0"}`}>
         {showImage && (
           <div>
             <Image
@@ -66,7 +74,20 @@ const Banner = (props: Props) => {
       </div>
       <div>
         {renderButton(dataBanner)}
-      </div>
+      </div> */}
+      <Slider {...settings}>
+        {dataBanner.map((item, key) => (
+          <div key={key} className={`relative w-full !h-fit min-h-[300px] md:min-h-[400px] max-h-[500px]  duration-500 transition-all rounded-2xl overflow-hidden`}>
+            <Image
+              src={item.image}
+              alt=""
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+        ))}
+
+      </Slider>
     </div>
   )
 }

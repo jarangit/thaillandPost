@@ -37,13 +37,13 @@ const Banner = (props: Props) => {
     setTimeout(() => {
       setShowImage(true)
     }, 200);
-  }, [showImage],)
+  }, [],)
 
   const renderButton = (data: any) => {
     return (
       <div className={`flex gap-3 mt-1 md:mt-3 justify-center`}>
         {data && data.map((item: any, key: number) => (
-          <div key={key} className={`w-[10px] md:w-[15px] h-[10px] md:h-[15px] rounded-full bg-blue-light cursor-pointer ${currentImage.id == item.id ? "border-2 border-gray-dark" : ""}`} onClick={() => onChangeBanner(item.id)} />
+          <div key={key} className={`w-[10px] md:w-[15px] h-[10px] md:h-[15px] rounded-full bg-blue-light cursor-pointer ${currentImage.id == item.id ? "border-2 border-blue-dark" : ""}`} onClick={() => onChangeBanner(item.id)} />
         ))}
       </div>
     )
@@ -52,7 +52,7 @@ const Banner = (props: Props) => {
 
   return (
     <div className={`myContainer !my-3`}>
-      <div className={`relative w-full !h-fit min-h-[140px] md:min-h-[300px] max-h-[500px]  duration-500 transition-all rounded-2xl overflow-hidden ${showImage ? "opacity-100" : "opacity-0"}`}>
+      <div className={`relative w-full !h-fit min-h-[140px] md:min-h-[400px] max-h-[500px]  duration-500 transition-all rounded-2xl overflow-hidden ${showImage ? "opacity-100" : "opacity-0"}`}>
         {showImage && (
           <div>
             <Image

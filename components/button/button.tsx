@@ -15,7 +15,7 @@ const Button = ({ onAction, disabled, children, bgColor, w }: Props) => {
         backgroundColor: bgColor ?? '#D30D2B',
         width: w ?? "100px"
       }}
-      className={` h-10 text-white rounded-md hover:bg-red-light`}
+      className={` h-6  text-sm md:h-10 text-white rounded-md hover:bg-red-light`}
       onClick={onAction}
     >
       {children}

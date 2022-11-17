@@ -7,7 +7,7 @@ type Props = {}
 
 const AgencyList = (props: Props) => {
   return (
-    <div className={`p-6 border border-gray-light rounded-2xl shadow-lg flex flex-col h-full`}>
+    <div className={`p-6 border border-gray-light rounded-2xl shadow-lg flex flex-col h-full bg-white`}>
       <div>
         <div className={`text-justify text-red`}>หน่วยงานที่เกี่ยวข้อง</div>
         <div className={`mb-3`}>

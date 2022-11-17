@@ -11,6 +11,7 @@ const PostSection = (props: Props) => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -44,7 +45,7 @@ const PostSection = (props: Props) => {
     <div className={`myContainer !my-10 !py-10`}>
       <Slider {...settings}>
         {mockPost.map((item, key) => (
-          <div key={key} className = {`p-4`}>
+          <div key={key} className = {`pr-3 py-4`}>
             <PostCard
               title={item.title}
               image={item.image}

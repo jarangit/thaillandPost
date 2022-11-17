@@ -55,26 +55,14 @@ const Banner = (props: Props) => {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoplay: true,
+    arrows: false,
+    autoplaySpeed: 2000.
   };
 
   return (
-    <div className={`max-w-[1300px] mx-auto my-10 px-3`}>
-      {/* <div className={`relative w-full !h-fit min-h-[300px] md:min-h-[400px] max-h-[500px]  duration-500 transition-all rounded-2xl overflow-hidden ${showImage ? "opacity-100" : "opacity-0"}`}>
-        {showImage && (
-          <div>
-            <Image
-              src={currentImage.image}
-              alt=""
-              fill
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-        )}
-      </div>
-      <div>
-        {renderButton(dataBanner)}
-      </div> */}
+    <div className={`max-w-[1300px] mx-auto my-10 px-[5%]`}>
       <Slider {...settings}>
         {dataBanner.map((item, key) => (
           <div key={key} className={`relative w-full !h-fit min-h-[300px] md:min-h-[400px] max-h-[500px]  duration-500 transition-all rounded-2xl overflow-hidden`}>

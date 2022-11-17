@@ -7,49 +7,24 @@ const dataBanner = [
   {
     id: "1",
     image: "/img/banner1.png",
+    title: `เช็กวันหยุดไปรษณีย์ไทย เดือนกรกฎาคม 2565 
+    เปิดบริการวันไหนบ้าง`,
+    desc: `บริษัทไปรษณีย์ไทย จำกัด เปิดให้บริการในวันหยุดยาวเดือนกรกฎาคม 2565 ทั้งรับฝาก
+    และพร้อมไปรษณีย์นำจ่ายทั่วประเทศในช่วงวันหยุดเดือนกรกฎาคม 2565 `,
   },
   {
     id: "2",
-    image: "/img/banner2.png",
+    image: "/img/post.png",
+    title: `เช็กวันหยุดไปรษณีย์ไทย เดือนกรกฎาคม 2565 
+    เปิดบริการวันไหนบ้าง`,
+    desc: `บริษัทไปรษณีย์ไทย จำกัด เปิดให้บริการในวันหยุดยาวเดือนกรกฎาคม 2565 ทั้งรับฝาก
+    และพร้อมไปรษณีย์นำจ่ายทั่วประเทศในช่วงวันหยุดเดือนกรกฎาคม 2565 `,
   },
 ]
+interface IBannerMB {
+  title: string, desc: string, image: string, key: any
+}
 const Banner = (props: Props) => {
-  const [currentImage, setCurrentImage] = useState({
-    id: dataBanner[0].id,
-    image: dataBanner[0].image
-  })
-  const [showImage, setShowImage] = useState(true)
-
-
-  const onChangeBanner = useCallback((id: string) => {
-    if (id) {
-      setShowImage(false)
-      const found = dataBanner.find((item: any) => item.id === id)
-      if (found) {
-        setCurrentImage({
-          ...found
-        })
-      } else {
-        setCurrentImage({
-          id: dataBanner[0].id,
-          image: dataBanner[0].image
-        })
-      }
-    }
-    setTimeout(() => {
-      setShowImage(true)
-    }, 200);
-  }, [],)
-
-  const renderButton = (data: any) => {
-    return (
-      <div className={`flex gap-3 mt-1 md:mt-3 justify-center`}>
-        {data && data.map((item: any, key: number) => (
-          <div key={key} className={`w-[10px] md:w-[15px] h-[10px] md:h-[15px] rounded-full bg-blue-light cursor-pointer ${currentImage.id == item.id ? "border-2 border-blue-dark" : ""}`} onClick={() => onChangeBanner(item.id)} />
-        ))}
-      </div>
-    )
-  }
   const settings = {
     dots: true,
     infinite: true,
@@ -60,21 +35,58 @@ const Banner = (props: Props) => {
     arrows: false,
     autoplaySpeed: 2000.
   };
-
-  return (
-    <div className={`max-w-[1300px] mx-auto my-10 px-[5%]`}>
-      <Slider {...settings}>
-        {dataBanner.map((item, key) => (
-          <div key={key} className={`relative w-full !h-fit min-h-[300px] md:min-h-[400px] max-h-[500px]  duration-500 transition-all rounded-2xl overflow-hidden`}>
+  const BannerMB = ({ key, title, desc, image }: IBannerMB) => {
+    return (
+      <div key={key} className={`!md:hidden  relative !flex w-full items-center  md:min-h-[400px] !h-fit max-h-[500px] !rounded-2xl !overflow-hidden `}
+        style={{
+          backgroundImage: `url(${image})`
+        }}
+      >
+        <div className={`backdrop-brightness-50 backdrop-blur-sm w-full lg:max-w-[50%] p-3 lg:p-10 text-white`}>
+          <div className={`z-10  text-md lg:text-2xl font-bold mb-10`}>{title}</div>
+          <div className={`text-lg`}>{desc}</div>
+          <div className={`hidden w-[50%] z-0 rounded-2xl overflow-hidden`}>
             <Image
-              src={item.image}
+              src={image}
               alt=""
               fill
               style={{ objectFit: "cover" }}
             />
           </div>
-        ))}
+        </div>
+      </div>
+    )
+  }
+  return (
+    <div className={`max-w-[1300px] mx-auto my-10 px-[5%]`}>
+      <Slider {...settings}>
+        {dataBanner.map((item, key) => (
+          <>
+            <div key={key} className={`hidden md:!flex w-full bg-blue items-center  md:min-h-[400px] !h-fit max-h-[500px] !rounded-2xl !overflow-hidden `}>
+              <div className={`w-full md:max-w-[50%] p-3 lg:p-10 text-white`}>
+                <div className={` text-xs lg:text-2xl font-bold mb-10`}>{item.title}</div>
+                <div>{item.desc}</div>
+              </div>
+              <div className={`relative w-[50%] hidden md:block min-h-[300px] md:min-h-[400px] rounded-2xl overflow-hidden`}>
+                <Image
+                  src={item.image}
+                  alt=""
+                  fill
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+            </div>
+            <div className={`md:hidden`}>
+              <BannerMB
+                title={item.title}
+                key={key}
+                image={item.image}
+                desc={item.desc}
+              />
+            </div>
 
+          </>
+        ))}
       </Slider>
     </div>
   )

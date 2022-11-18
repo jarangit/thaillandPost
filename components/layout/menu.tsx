@@ -63,14 +63,14 @@ const Menu = (props: Props) => {
         </div>
         <div className={`bg-red p-2 md:px-6 flex justify-between items-center`}>
           <div>
-            <div className={`flex gap-3 items-center text-white`}>
+            <div className={`flex gap-3  text-white`}>
               <IoIosHome color='#ffff' size={20} />
-              <div className={`text-xs`}>หน้าแรก</div>
+              <div className={`text-md`}>หน้าแรก</div>
             </div>
           </div>
           <div className={`flex  gap-2 md:gap-6 items-center cursor-pointer`}>
             <InputSearch />
-            <div className={`text-white flex gap-1 items-center text-xs`}>
+            <div className={`text-white flex gap-1 items-center text-md`}>
               <Image
                 src='/img/icons/thailand.svg'
                 alt=''

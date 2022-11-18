@@ -40,8 +40,6 @@ const PostSection = (props: Props) => {
     ]
   };
   return (
-
-    // <div className={`myContainer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 !py-8`}>
     <div className={`myContainer !my-10 !py-10`}>
       <Slider {...settings}>
         {mockPost.map((item, key) => (

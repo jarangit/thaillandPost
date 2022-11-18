@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react'
+import React, { useMemo } from 'react'
 
 type Props = {
   title: string;
@@ -9,9 +9,20 @@ type Props = {
 }
 
 const PostCard = ({ title, desc, image, createdAt }: Props) => {
+  const styled = useMemo(() => ({
+    root: `
+    rounded-2xl shadow-md cursor-pointer hover:text-blue bg-white
+    `,
+    boxImage: `
+    relative w-full h-[200px] rounded-2xl overflow-hidden
+    `,
+    boxContent: `
+    p-3 lg:p-6 flex flex-col gap-3 lg:gap-6 mt-3 lg:mt-6 
+    `
+  }), [])
   return (
-    <div className={` rounded-2xl shadow-md cursor-pointer hover:text-blue bg-white`}>
-      <div className={`relative w-full h-[200px] rounded-2xl overflow-hidden`}>
+    <div className={`${styled.root}`}>
+      <div className={`${styled.boxImage}`}>
         <Image
           src={image}
           alt=""
@@ -19,7 +30,7 @@ const PostCard = ({ title, desc, image, createdAt }: Props) => {
           style={{ objectFit: "cover" }}
         />
       </div>
-      <div className={`p-3 lg:p-6 flex flex-col gap-3 lg:gap-6 mt-3 lg:mt-6 `}>
+      <div className={`${styled.boxContent}`}>
         <div className={`text-lg font-bold `}>
           {title}
         </div>

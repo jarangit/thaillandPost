@@ -1,7 +1,7 @@
 import React from 'react'
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
 import Button from '../button/button'
-import { listMenu } from './menu'
+import { listMenu } from '../../constant/menu'
 import { BsFillArrowRightCircleFill } from 'react-icons/bs'
 
 type Props = {

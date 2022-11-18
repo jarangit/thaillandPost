@@ -6,27 +6,15 @@ import { IoIosHome } from 'react-icons/io'
 import InputSearch from '../input/inputSearch'
 import { AiFillCaretDown, } from 'react-icons/ai'
 import MobileMenu from './mobileMenu'
+import { listMenu } from '../../constant/menu'
 type Props = {}
 
-export const listMenu = [
-  {
-    name: 'ข่าวประชาสัมพันธ์',
-    url: '#'
-  },
-  {
-    name: 'แคตตาล็อก',
-    url: '#'
-  },
-  {
-    name: 'หน่วยงานที่เกี่ยวข้อง',
-    url: '#'
-  },
-]
+
 const Menu = (props: Props) => {
   const [showMBMenu, setShowMBMenu] = useState(false)
   return (
     <>
-        <MobileMenu onClose = {() => setShowMBMenu(false)} onShow = {showMBMenu}/>
+      <MobileMenu onClose={() => setShowMBMenu(false)} onShow={showMBMenu} />
       <div>
         <div className={`flex justify-between items-center lg:h-24 px-2 lg:px-6 bg-white`}>
           <div className={`flex gap-3 md:gap-10 items-center`}>

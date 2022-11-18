@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import { list1, list2, address } from '../../constant/footerLink'
 import { RiContactsBookFill } from 'react-icons/ri'
 import { MdOutlinePhoneIphone } from 'react-icons/md'
@@ -8,7 +8,21 @@ import { AiOutlineMail } from 'react-icons/ai'
 type Props = {}
 
 const Footer = (props: Props) => {
-
+  //styles zone 
+  const styled = useMemo(() => ({
+    root: `
+  bg-blue text-white py-10 px-6 lg:px-3
+  `,
+    grid: `
+  myContainer grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6
+  `,
+    boxContent: `
+  flex flex-col gap-1 mt-4 hover:text-gray
+  `,
+    linkItem: `
+  cursor-pointer hover:text-red
+  `
+  }), [])
   const renderAddressIcon = useCallback((type: string) => {
     switch (type) {
       case "address":
@@ -25,14 +39,14 @@ const Footer = (props: Props) => {
   }, [])
 
   return (
-    <div className={`bg-blue text-white py-10 px-6 lg:px-3`}>
-      <div className={`myContainer grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6`}>
+    <div className={`${styled.root}`}>
+      <div className={`${styled.grid}`}>
         <div>
           <div className={`font-semibold`}>ข่าวประชาสัมพันธ์</div>
-          <ul className={`flex flex-col gap-1 mt-4 hover:text-gray`}>
+          <ul className={`${styled.boxContent}`}>
             {list1.map((item, key) => (
               <React.Fragment key={key}>
-                <li className={`cursor-pointer hover:text-red`}> {item.name} </li>
+                <li className={`${styled.linkItem}`}> {item.name} </li>
               </React.Fragment>
             ))}
           </ul>
@@ -40,10 +54,10 @@ const Footer = (props: Props) => {
         <div>
           <div>
             <div className={`font-semibold`}>แคตตาล็อก</div>
-            <ul className={`flex flex-col gap-1 mt-4 hover:text-gray`}>
+            <ul className={`${styled.boxContent}`}>
               {list2.map((item, key) => (
                 <React.Fragment key={key}>
-                  <li className={`cursor-pointer hover:text-red`}> {item.name} </li>
+                  <li className={`${styled.linkItem}`}> {item.name} </li>
                 </React.Fragment>))}
             </ul>
           </div>
@@ -51,10 +65,10 @@ const Footer = (props: Props) => {
         <div>
           <div>
             <div className={`font-semibold`}>หน่วยงานที่เกี่ยวข้อง</div>
-            <ul className={`flex flex-col gap-1 mt-4 hover:text-gray`}>
+            <ul className={`${styled.boxContent}`}>
               {list2.map((item, key) => (
                 <React.Fragment key={key}>
-                  <li className={`cursor-pointer hover:text-red`}> {item.name} </li>
+                  <li className={`${styled.linkItem}`}> {item.name} </li>
                 </React.Fragment>))}
             </ul>
           </div>
@@ -62,10 +76,10 @@ const Footer = (props: Props) => {
         <div>
           <div>
             <div className={`font-semibold`}>บริษัท ไปรษณีย์ไทย จำกัด</div>
-            <ul className={`flex flex-col gap-1 mt-4 hover:text-gray`}>
+            <ul className={`${styled.boxContent}`}>
               {address.map((item, key) => (
                 <React.Fragment key={key}>
-                  <li className={`cursor-pointer hover:text-red flex gap-3`}>
+                  <li className={`${styled.linkItem} flex gap-3`}>
                     <div className={`mt-1`}>
                       {renderAddressIcon(item.type)}
                     </div>

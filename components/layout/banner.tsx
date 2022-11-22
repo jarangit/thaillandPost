@@ -2,11 +2,10 @@ import React, { useCallback, useMemo, useState } from 'react'
 import Image from 'next/image'
 import Slider from 'react-slick'
 import { dataBanner } from '../../constant/banner'
+import BannerMB from './bannerMobile'
 type Props = {}
 
-interface IBannerMB {
-  title: string, desc: string, image: string, key: any
-}
+
 const Banner = (props: Props) => {
   const settings = {
     dots: true,
@@ -32,29 +31,7 @@ const Banner = (props: Props) => {
     relative w-[50%] hidden md:block min-h-[300px] md:min-h-[400px] rounded-2xl overflow-hidden
     `
   }), [])
-  const BannerMB = ({ key, title, desc, image }: IBannerMB) => {
-
-    return (
-      <div key={key} className={`${styled.rootMB}`}
-        style={{
-          backgroundImage: `url(${image})`
-        }}
-      >
-        <div className={`${styled.boxContentMB}`}>
-          <div className={`z-10  text-md lg:text-2xl font-bold mb-10`}>{title}</div>
-          <div className={`text-lg`}>{desc}</div>
-          <div className={`hidden w-[50%] z-0 rounded-2xl overflow-hidden`}>
-            <Image
-              src={image}
-              alt=""
-              fill
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-        </div>
-      </div>
-    )
-  }
+  
   return (
     <div className={`max-w-[1300px] mx-auto my-10 px-[5%]`}>
       <Slider {...settings}>

@@ -21,12 +21,14 @@ const GridContents = (props: Props) => {
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
           {mockPost.map((item, key) => (
-            <GridContentItem
-              title={item.title}
-              image={item.image}
-              createdAt={item.createdAt}
-              key={key}
-            />
+            <React.Fragment key={key}>
+              <GridContentItem
+                title={item.title}
+                image={item.image}
+                createdAt={item.createdAt}
+                key={key}
+              />
+            </React.Fragment>
           ))}
         </div>
       </div>

@@ -14,7 +14,7 @@ const CalendalList = (props: Props) => {
     <div className='bg-white rounded-3xl py-6'>
       {/* item */}
       {mockCalendalList.map((item, key) => (
-        <div className={`${styled.item}`}>
+        <div key = {key} className={`${styled.item}`}>
           <div className='px-6 flex justify-between w-full items-center cursor-pointer'>
             <div className='flex flex-col gap-3'>
               <div className='text-red'>Catalog Stamp ประจำเดือนมิถุนายน 2565.pdf</div>

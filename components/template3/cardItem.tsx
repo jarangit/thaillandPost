@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react'
+import { IoIosArrowDroprightCircle } from 'react-icons/io';
 
 type Props = {
   title: string;
@@ -12,7 +13,7 @@ const CardItem = ({ title, desc }: Props) => {
       <div className='absolute w-12 h-12 bg-[#FF3A1C] -top-7 rounded-lg flex justify-center items-center'>
         <Image
           src={"/img/icons/doc.svg"}
-          alt = ""
+          alt=""
           width={25}
           height={25}
         />
@@ -21,7 +22,14 @@ const CardItem = ({ title, desc }: Props) => {
         <div>{title}</div>
         <div className='text-xs'>{desc}</div>
       </div>
-      <div className='mt-3 flex justify-end text-blue hover:text-red transition-all cursor-pointer'>Read more</div>
+      <div className='mt-3 flex justify-end items-center gap-1 text-blue hover:text-red transition-all cursor-pointer'>
+        <div>
+          Read more
+        </div>
+        <div>
+          <IoIosArrowDroprightCircle size={25} />
+        </div>
+      </div>
     </div>
   )
 }

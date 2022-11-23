@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react'
 import { mockDownloadList } from '../../constant/downloadList'
+import Button from '../button/button'
 import DownloadItem from '../items/downloadItem'
 type Props = {}
 
@@ -11,7 +12,16 @@ const DownloadTable = (props: Props) => {
   }), [])
   return (
     <div className={`${styled.root}`}>
-      <div className={`text-red`}>ดาวน์โหลด</div>
+      <div className='flex justify-between items-center'>
+        <div className={`text-red cursor-pointer`}>ดาวน์โหลด</div>
+        <Button
+          bgColor='#D30D2B'
+          w="auto"
+          h='30px'
+        >
+          View All
+        </Button>
+      </div>
       <div>
         {mockDownloadList.map((item, key) => (
           <div key={key}>

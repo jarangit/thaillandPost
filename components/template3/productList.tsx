@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io'
 import Slider from 'react-slick'
 import { mockDataProducts } from '../../constant/product'
 import ProductItem from './productItem'
@@ -11,7 +12,7 @@ const ProductList = (props: Props) => {
       {...props}
       className='invisible lg:visible absolute -bottom-10 right-8 text-blue hover:text-blue-dark'
     >
-      <FaArrowLeft
+      <IoIosArrowDropleftCircle
         size={30}
       />
 
@@ -22,7 +23,7 @@ const ProductList = (props: Props) => {
       {...props}
       className="invisible lg:visible absolute -bottom-10 right-0 text-blue hover:text-blue-dark"
     >
-      <FaArrowRight
+      <IoIosArrowDroprightCircle
         size={30}
       />
     </button>

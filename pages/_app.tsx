@@ -8,6 +8,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <Layout>
       <Head>
+        <title>Thailand Post</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link
           rel="stylesheet"
           type="text/css"

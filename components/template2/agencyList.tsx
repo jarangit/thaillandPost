@@ -1,11 +1,23 @@
 import React from 'react'
 import { MdArrowForwardIos } from 'react-icons/md'
 import Button from '../button/button'
+import ButtonOutline from '../button/buttonOutline'
 
 const AgencyListTemplate2 = () => {
   return (
     <div className='py-6 px-8 bg-white rounded-3xl h-full drop-shadow-md'>
-      <div className='text-red'>หน่วยงานที่เกี่ยวข้อง</div>
+      <div className='text-red flex justify-between items-center'>
+        <div>
+          หน่วยงานที่เกี่ยวข้อง
+        </div>
+        <Button
+          bgColor='#F06852'
+          w="auto"
+          h='30px'
+        >
+          View all
+        </Button>
+      </div>
 
       <div className='flex flex-col gap-6 mt-6'>
         <div className='border-b border-gray-light pb-3 flex gap-2'>
@@ -17,13 +29,11 @@ const AgencyListTemplate2 = () => {
               @Stampinlove
             </div>
             <div>
-              <Button
-                bgColor='#F06852'
-                w="auto"
-                h='30px'
+              <ButtonOutline
+                outlineColor='#F06852'
               >
                 Detail
-              </Button>
+              </ButtonOutline>
             </div>
           </div>
         </div>
@@ -36,13 +46,11 @@ const AgencyListTemplate2 = () => {
               @Stampinlove
             </div>
             <div>
-              <Button
-                bgColor='#F06852'
-                w="auto"
-                h='30px'
+              <ButtonOutline
+                outlineColor='#F06852'
               >
                 Detail
-              </Button>
+              </ButtonOutline>
             </div>
           </div>
         </div>

@@ -7,6 +7,7 @@ import InputSearch from '../input/inputSearch'
 import { AiFillCaretDown, } from 'react-icons/ai'
 import MobileMenu from './mobileMenu'
 import { listMenu } from '../../constant/menu'
+import Link from 'next/link'
 type Props = {}
 
 
@@ -18,16 +19,18 @@ const Menu = (props: Props) => {
       <div>
         <div className={`flex justify-between items-center lg:h-24 px-2 lg:px-6 bg-white`}>
           <div className={`flex gap-3 md:gap-10 items-center`}>
-            <div className={`relative w-12 h-12 md:w-24 md:h-24`}>
-              <Image
-                src='/img/logo.png'
-                alt='logo'
-                fill
-                style={{
-                  objectFit: 'contain'
-                }}
-              />
-            </div>
+            <Link href={'/'}>
+              <div className={`relative w-12 h-12 md:w-24 md:h-24`}>
+                <Image
+                  src='/img/logo.png'
+                  alt='logo'
+                  fill
+                  style={{
+                    objectFit: 'contain'
+                  }}
+                />
+              </div>
+            </Link>
             <div>
               <ul className={`lg:flex gap-4 hidden`}>
                 {listMenu && listMenu.map((item, key) => (

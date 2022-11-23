@@ -11,7 +11,7 @@ const CalendalList = (props: Props) => {
     `
   }
   return (
-    <div className='bg-white rounded-3xl py-6'>
+    <div className='bg-white rounded-3xl py-6 drop-shadow-md'>
       {/* item */}
       {mockCalendalList.map((item, key) => (
         <div key = {key} className={`${styled.item}`}>

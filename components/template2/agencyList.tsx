@@ -4,7 +4,7 @@ import Button from '../button/button'
 
 const AgencyListTemplate2 = () => {
   return (
-    <div className='py-6 px-8 bg-white rounded-3xl h-full'>
+    <div className='py-6 px-8 bg-white rounded-3xl h-full drop-shadow-md'>
       <div className='text-red'>หน่วยงานที่เกี่ยวข้อง</div>
 
       <div className='flex flex-col gap-6 mt-6'>

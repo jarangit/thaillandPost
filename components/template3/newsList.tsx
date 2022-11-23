@@ -8,7 +8,7 @@ const NewsList = (props: Props) => {
   return (
     <div className=' bg-white p-6  rounded-3xl drop-shadow-md'>
       <div className='text-2xl text-blue'>ข่าวประชาสัมพันธ์</div>
-      {mockPost.map((item, key) => (
+      {mockPost.slice(0,5).map((item, key) => (
         <div key = {key} className='flex gap-3 py-3 border-b border-gray-light cursor-pointer items-center'>
           <div className='bg-blue-light text-white w-24 h-[60px] flex justify-center items-center flex-col rounded-sm'>
             <div className='text-blue-dark'>23</div>

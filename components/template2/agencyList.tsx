@@ -4,9 +4,23 @@ import Button from '../button/button'
 import ButtonOutline from '../button/buttonOutline'
 
 const AgencyListTemplate2 = () => {
+  const styled = {
+    root: `
+    py-6 px-8 bg-white rounded-3xl h-full drop-shadow-md
+    `,
+    title: `
+    text-red flex justify-between items-center
+    `,
+    boxContent: `
+    flex flex-col gap-6 mt-6
+    `,
+    boxItem: `
+    border-b border-gray-light pb-3 flex gap-2
+    `
+  }
   return (
-    <div className='py-6 px-8 bg-white rounded-3xl h-full drop-shadow-md'>
-      <div className='text-red flex justify-between items-center'>
+    <div className={`${styled.root}`}>
+      <div className={`${styled.title}`}>
         <div>
           หน่วยงานที่เกี่ยวข้อง
         </div>
@@ -19,8 +33,8 @@ const AgencyListTemplate2 = () => {
         </Button>
       </div>
 
-      <div className='flex flex-col gap-6 mt-6'>
-        <div className='border-b border-gray-light pb-3 flex gap-2'>
+      <div className={`${styled.boxContent}`}>
+        <div className={`${styled.boxItem}`}>
           <div>
             <MdArrowForwardIos size={20} />
           </div>
@@ -37,7 +51,7 @@ const AgencyListTemplate2 = () => {
             </div>
           </div>
         </div>
-        <div className='border-b border-gray-light pb-3 flex gap-2'>
+        <div className={`${styled.boxItem}`}>
           <div>
             <MdArrowForwardIos size={20} />
           </div>

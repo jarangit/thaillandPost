@@ -8,9 +8,24 @@ type Props = {
 }
 
 const CardItem = ({ title, desc }: Props) => {
+  const styled = {
+    root: `
+    p-6 rounded-3xl bg-white relative mt-10 drop-shadow-md
+    `,
+    boxImage: `
+    absolute w-12 h-12 bg-[#FF3A1C] -top-7 rounded-lg flex justify-center items-center
+    `,
+    boxContent: `
+    flex flex-col gap-10 mt-6 cursor-pointer hover:text-blue
+    `,
+    boxReadMore: `
+    mt-3 flex justify-end items-center gap-1 text-blue hover:text-red transition-all cursor-pointer
+    `
+
+  }
   return (
-    <div className='p-6 rounded-3xl bg-white relative mt-10 drop-shadow-md'>
-      <div className='absolute w-12 h-12 bg-[#FF3A1C] -top-7 rounded-lg flex justify-center items-center'>
+    <div className={`${styled.root}`}>
+      <div className={`${styled.boxImage}`}>
         <Image
           src={"/img/icons/doc.svg"}
           alt=""
@@ -18,11 +33,11 @@ const CardItem = ({ title, desc }: Props) => {
           height={25}
         />
       </div>
-      <div className='flex flex-col gap-10 mt-6 cursor-pointer hover:text-blue'>
+      <div className={`${styled.boxContent}`}>
         <div>{title}</div>
         <div className='text-xs'>{desc}</div>
       </div>
-      <div className='mt-3 flex justify-end items-center gap-1 text-blue hover:text-red transition-all cursor-pointer'>
+      <div className={`${styled.boxReadMore}`}>
         <div>
           Read more
         </div>

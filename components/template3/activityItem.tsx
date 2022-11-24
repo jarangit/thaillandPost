@@ -14,8 +14,6 @@ const ActivityItem = ({title, image}: Props) => {
         alt=""
         width={300}
         height={100}
-        // fill
-        // style={{zIndex: "-1" }}
       />
       <div className='absolute w-full top-20 h-fit text-xs py-2 px-3 text-white bg-[#002369] opacity-80'>
         <div className='opacity-100'>

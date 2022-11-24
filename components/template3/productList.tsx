@@ -1,5 +1,4 @@
 import React from 'react'
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io'
 import Slider from 'react-slick'
 import { mockDataProducts } from '../../constant/product'
@@ -43,23 +42,6 @@ const ProductList = (props: Props) => {
     prevArrow: <ArrowLeft />,
     nextArrow: <ArrowRight />,
     responsive: [
-      // {
-      //   breakpoint: 1024,
-      //   settings: {
-      //     slidesToShow: 3,
-      //     slidesToScroll: 3,
-      //     infinite: true,
-      //     dots: true
-      //   }
-      // },
-      // {
-      //   breakpoint: 600,
-      //   settings: {
-      //     slidesToShow: 2,
-      //     slidesToScroll: 2,
-      //     initialSlide: 2
-      //   }
-      // },
       {
         breakpoint: 480,
         settings: {
@@ -74,7 +56,6 @@ const ProductList = (props: Props) => {
       <div className='text-2xl text-blue'>
         ข่าวสารเกี่ยวกับสินค้าและบริการ
       </div>
-      {/* <div className='grid grid-cols-2 gap-3 my-6'> */}
       <Slider {...settings}>
         {mockDataProducts.map((item, key) => (
           <div key={key}>
@@ -85,7 +66,6 @@ const ProductList = (props: Props) => {
           </div>
         ))}
       </Slider>
-      {/* </div> */}
     </div>
   )
 }

@@ -9,10 +9,16 @@ const CalendalList = (props: Props) => {
   const styled = {
     item: `
     border-b border-gray-light py-3 h-full last:border-0
+    `,
+    root:`
+    bg-white rounded-3xl py-6 drop-shadow-md
+    `,
+    box:`
+    px-6 flex justify-between w-full items-center cursor-pointer
     `
   }
   return (
-    <div className='bg-white rounded-3xl py-6 drop-shadow-md'>
+    <div className={`${styled.root}`}>
       <div className='flex justify-between items-center px-6'>
         <div className='text-red'>Catalog Stamp</div>
         <div>
@@ -28,7 +34,7 @@ const CalendalList = (props: Props) => {
       {/* item */}
       {mockCalendalList.map((item, key) => (
         <div key={key} className={`${styled.item}`}>
-          <div className='px-6 flex justify-between w-full items-center cursor-pointer'>
+          <div className={`${styled.box}`}>
             <div className='flex flex-col gap-3'>
               <div className='text-black'>Catalog Stamp ประจำเดือนมิถุนายน 2565.pdf</div>
               <div className='flex gap-2 items-center'>

@@ -3,7 +3,7 @@ export const mockDataContentLists = [
     id: 1,
     title: `ไปรษณีย์ไทย งดส่งสิ่งของระหว่างประเทศไปจีนชั่วคราว (ตัวอย่าง Content รูปภาพและข้อความ)`,
     date: `10 กรกฎาคม 2565 09.00 น.`,
-    image: `/img/product.png`,
+    image: `/img/thumbnail.png`,
     type: "POST",
     data: {
       title: `“พุทรานมสด” ผ่านไปรษณีย์ไทย สั่งได้แล้วที่ 
@@ -18,9 +18,14 @@ export const mockDataContentLists = [
       สำหรับปลายทางพื้นที่เดียวกัน และไม่เกิน 2 วันทำการสำหรับ
       ในปลายทางต่างพื้นที่ และสามารถตรวจสอบสถานะการจัดส่ง
       ได้ทางแอปพลิเคชัน Track&Trace `,
-      thumbnail: ``,
+      thumbnail: `/img/thumbnail.png`,
       galleries: [
-        "",
+        "/img/product2.png",
+        "/img/product2.png",
+        "/img/product2.png",
+        "/img/product2.png",
+        "/img/product2.png",
+        "/img/product2.png",
       ],
       ref: "https://www.thairath.co.th/news/local/2317640",
       files: [

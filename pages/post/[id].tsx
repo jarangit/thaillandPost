@@ -15,13 +15,13 @@ const postDetailPage = (props: Props) => {
     if (found) {
       setDataContent(found)
     }
-  }, [isReady])
+  }, [])
 
   useEffect(() => {
     if (query && query.id) {
       getData(query.id)
     }
-  }, [isReady])
+  }, [getData, query])
 
   return (
     <div>

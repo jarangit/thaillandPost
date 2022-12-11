@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdOutlineAttachFile } from 'react-icons/md';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 type Props = {
   data: any;
@@ -9,6 +11,26 @@ type Props = {
 
 
 const RenderPost = ({ data }: Props) => {
+  const [isOpenLightBox, setIsOpenLightBox] = useState(false)
+  const [photoIndex, setPhotoIndex] = useState(0)
+  const { galleries } = data
+
+  const onMovePrevRequest = () => {
+    setPhotoIndex((photoIndex + galleries.length - 1) % galleries.length)
+  }
+  const onMoveNextRequest = () => {
+    setPhotoIndex((photoIndex + galleries.length + 1) % galleries.length)
+  }
+
+  const onOpenImage = (id: any) => {
+    setIsOpenLightBox(true)
+    setPhotoIndex(id)
+  }
+
+  useEffect(() => {
+
+  }, [photoIndex])
+
   return (
     <div>
       <div className={`grid lg:grid-cols-2 gap-10`}>
@@ -28,8 +50,8 @@ const RenderPost = ({ data }: Props) => {
           <div className={`text-blue text-xl mb-3`}>ภาพประกอบ</div>
           <div className={`grid grid-cols-2 lg:grid-cols-6 gap-3 justify-between`}>
             {data.galleries.map((item: any, key: any) => (
-              <div key={key}>
-                <Image src={item} alt="" width={300} height={200} />
+              <div key={key} className={`relative w-full h-[120px] rounded-lg overflow-hidden cursor-pointer`} onClick={() => onOpenImage(key)}>
+                <Image src={item} alt="" fill style={{ objectFit: "cover" }} />
               </div>
             ))}
           </div>
@@ -58,7 +80,19 @@ const RenderPost = ({ data }: Props) => {
         </div>
       </div>
 
-
+      {/* light box */}
+      {galleries && isOpenLightBox ? (
+        <Lightbox
+          mainSrc={galleries[photoIndex]}
+          nextSrc={galleries[(photoIndex + 1) % galleries.length]}
+          prevSrc={galleries[(photoIndex + galleries.length - 1) % galleries.length]}
+          onCloseRequest={() => setIsOpenLightBox(false)}
+          onMovePrevRequest={onMovePrevRequest}
+          onMoveNextRequest={onMoveNextRequest}
+          onImageLoadError = {() => console.log("loading")}
+          mainSrcThumbnail = {"1000px"}
+        />
+      ) : null}
     </div>
   )
 }

@@ -64,16 +64,16 @@ export const mockDataContentLists = [
     type: "PDF",
     data: [
       {
-        title: ``,
-        downloadUrl: ``
+        title: `แบบฟอร์มสมาชิกแสตมป์ไทย.pdf`,
+        downloadUrl: `https://firebasestorage.googleapis.com/v0/b/lapieza-production.appspot.com/o/cves%2F12f5c05d-1c8e-42bf-a650-397424e8e5e8.pdf?alt=media&token=d2e9675a-5198-47a0-b86b-70e25cd5d970`
       },
       {
-        title: ``,
-        downloadUrl: ``
+        title: `แบบฟอร์มสั่งจองแสตมป์.pdf`,
+        downloadUrl: `/PDF/sample.pdf`
       },
       {
-        title: ``,
-        downloadUrl: ``
+        title: `test.pdf`,
+        downloadUrl: `/PDF/pdf-test.pdf`
       },
     ]
   },

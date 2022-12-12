@@ -16,7 +16,6 @@ module.exports = {
       'red': {
         light: '#FF3A1C',
         DEFAULT: '#D30D2B',
-        dark: '#',
       },
       'blue': {
         light: '#B9D2DD',
@@ -30,10 +29,23 @@ module.exports = {
       },
       'gray': {
         light: '#D6D6D6',
-        DEFAULT: '##9B9898',
+        DEFAULT: '#9B9898',
         dark: '#707070',
+      },
+      'green': {
+        light: '#A3DFC9',
+        DEFAULT: '#22952A',
+      },
+      'orange': {
+        light: '#F8DFC1',
+        DEFAULT: '#F7A848',
+      },
+      'black': {
+        DEFAULT: '#000',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }

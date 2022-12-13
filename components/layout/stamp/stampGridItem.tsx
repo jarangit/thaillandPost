@@ -14,8 +14,14 @@ const StampGridItem = ({ data }: Props) => {
           {data.limited && <div className='bg-orange-light text-orange px-2 rounded-full'>Limited</div>}
           {data.recommend && <div className='bg-green-light text-green px-2 rounded-full'>Recommend</div>}
         </div>
-        <div className='flex justify-between items-center gap-1 text-xs flex-wrap absolute -top-3 -left-1 w-full'>
+        {/* <div className='flex justify-between items-center gap-1 text-xs flex-wrap absolute -top-3 -left-1 w-full'>
           {data.new ? <div><Image src={'/img/icons/new.png'} alt="" width={50} height={50} /></div> : <div></div>}
+          {data.hot ? <div className='mt-2'><Image src={'/img/icons/hot.png'} alt="" width={30} height={30} /></div> : <div></div>}
+        </div> */}
+        <div className=' absolute -top-3 -left-1'>
+          {data.new ? <div><Image src={'/img/icons/new.png'} alt="" width={50} height={50} /></div> : <div></div>}
+        </div>
+        <div className=' absolute -top-2 right-1'>
           {data.hot ? <div className='mt-2'><Image src={'/img/icons/hot.png'} alt="" width={30} height={30} /></div> : <div></div>}
         </div>
       </>

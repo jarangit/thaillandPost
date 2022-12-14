@@ -1,9 +1,11 @@
 import React, { useMemo } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import Image from 'next/image'
-type Props = {}
+type Props = {
+  placeholder?:string;
+}
 
-const InputSearch = (props: Props) => {
+const InputSearch = ({placeholder}: Props) => {
   const styled = useMemo(() => ({
     root: `
     bg-white flex gap-2 items-center rounded-md h-8 pl-2 overflow-hidden
@@ -17,7 +19,7 @@ const InputSearch = (props: Props) => {
       <AiOutlineSearch
         color='#9B9898'
       />
-      <input placeholder='ไปรษณีย์ไทย' className={`text-gray text-sm`} />
+      <input placeholder={placeholder ?? "ไปรษณีย์ไทย"} className={`text-gray text-sm`} />
       <div className={`${styled.boxImage}`}>
         <Image
           src='/img/icons/control.svg'

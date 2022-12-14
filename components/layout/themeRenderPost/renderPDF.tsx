@@ -22,8 +22,8 @@ const RenderPDF = ({ data }: Props) => {
   // Create new plugin instance
   const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
-  const onSelectFile = useCallback((file:string) => {
-    if(file){
+  const onSelectFile = useCallback((file: string) => {
+    if (file) {
       setCurrentFile(file)
     }
     window.scrollTo({
@@ -31,17 +31,20 @@ const RenderPDF = ({ data }: Props) => {
       left: 0,
       behavior: "smooth"
     })
-  },[])
+  }, [])
 
   useEffect(() => {
-    if(currentFile === ""){
+    if (currentFile === "") {
       setCurrentFile(data[0].downloadUrl)
     }
   }, [])
-  
+
   return (
     <div>
-      <div className='text-2xl lg:text-3xl text-blue'>แบบฟอร์มสมาชิกแสตมป์ไทย</div>
+      <div className='flex items-center justify-between w-full mb-6'>
+        <div className='text-3xl text-blue'>แบบฟอร์มสมาชิกแสตมป์ไทย</div>
+        <div className='text-blue-dark'>10 กรกฎาคม 2565 09.00 น.</div>
+      </div>
       <div
         className={`h-screen my-6 max-w-[900px] mx-auto`}
       >
@@ -60,13 +63,13 @@ const RenderPDF = ({ data }: Props) => {
           <div key={key} className={`flex items-center justify-between p-3 cursor-pointer ${currentFile == item.downloadUrl && "bg-[#efefef] text-red"}`} onClick={() => onSelectFile(item.downloadUrl)}>
             <div className='flex gap-3 items-center'>
               <div>
-              <MdOutlineAttachFile size={25} color = {"#9B9898"}/>
+                <MdOutlineAttachFile size={25} color={"#9B9898"} />
               </div>
               <div className='hover:text-red transition-all'>{item.title}</div>
             </div>
-            <div className='bg-red-light p-2 rounded-full '>
-              <FaDownload size = {20} color = {"#fff"} />
-            </div>
+          <div className='text-blue'>
+            Download
+          </div>
           </div>
         ))}
       </div>

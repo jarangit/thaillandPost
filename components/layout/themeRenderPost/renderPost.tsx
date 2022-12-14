@@ -33,6 +33,10 @@ const RenderPost = ({ data }: Props) => {
 
   return (
     <div>
+      <div className='flex items-center justify-between w-full mb-6'>
+        <div className='text-3xl text-blue'>ข่าวสารเกี่ยวกับสินค้าและบริการ</div>
+        <div className='text-blue-dark'>10 กรกฎาคม 2565 09.00 น.</div>
+      </div>
       <div className={`grid lg:grid-cols-2 gap-10`}>
         <div className='col-span-2 lg:col-span-1'>
           <div className={`relative rounded-xl overflow-hidden w-full max-w-[350px] lg:max-w-none h-[400px]`}>
@@ -89,8 +93,8 @@ const RenderPost = ({ data }: Props) => {
           onCloseRequest={() => setIsOpenLightBox(false)}
           onMovePrevRequest={onMovePrevRequest}
           onMoveNextRequest={onMoveNextRequest}
-          onImageLoadError = {() => console.log("loading")}
-          mainSrcThumbnail = {"1000px"}
+          onImageLoadError={() => console.log("loading")}
+          mainSrcThumbnail={"1000px"}
         />
       ) : null}
     </div>

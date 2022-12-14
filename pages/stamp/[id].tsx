@@ -34,9 +34,6 @@ const StampDetailPage = (props: Props) => {
         <div className='bg-white rounded-xl p-6 drop-shadow-lg'>
           <div className='flex flex-wrap lg:flex-nowrap gap-3 justify-center lg:justify-between items-center pb-3 border-b border-gray-light'>
             <div className='line-clamp-1'>{dataStamp?.name}</div>
-            <div className='border rounded-md border-gray-light hidden lg:block'>
-              <InputSearch />
-            </div>
           </div>
 
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6'>
@@ -51,31 +48,31 @@ const StampDetailPage = (props: Props) => {
               </div>
             </div>
             <div className='flex gap-3 flex-col'>
-              <div className='line-clamp-2'>{dataStamp?.name}</div>
+              <div className=''>{dataStamp?.name}</div>
               <div className='text-red'>{dataStamp?.price} บาท</div>
-              <ul className='flex flex-col gap-3 text-xs'>
+              <ul className='flex flex-col gap-3 text-sm'>
                 <li className='flex gap-3'>
-                  <div className='min-w-[110px] font-bold'>ภาพ</div>
+                  <div className='min-w-[120px] font-bold'>ภาพ</div>
                   <div className={`${styled.textDetail}`}>: {dataStamp?.description}</div>
                 </li>
                 <li className='flex gap-3'>
-                  <div className='min-w-[110px] font-bold'>ขนาด</div>
+                  <div className='min-w-[120px] font-bold'>ขนาด</div>
                   <div className={`${styled.textDetail}`}>: {dataStamp?.size}</div>
                 </li>
                 <li className='flex gap-3'>
-                  <div className='min-w-[110px] font-bold'>วิธีการพิมพ์และสี</div>
+                  <div className='min-w-[120px] font-bold'>วิธีการพิมพ์และสี</div>
                   <div className={`${styled.textDetail}`}>: {dataStamp?.colors}</div>
                 </li>
                 <li className='flex gap-3'>
-                  <div className='min-w-[110px] font-bold'>จำนวนดวงในแผ่น </div>
+                  <div className='min-w-[120px] font-bold'>จำนวนดวงในแผ่น </div>
                   <div className={`${styled.textDetail}`}>: {dataStamp?.stock} ดวง</div>
                 </li>
                 <li className='flex gap-3'>
-                  <div className='min-w-[110px] font-bold'>ซองวันแรกจำหน่าย </div>
+                  <div className='min-w-[120px] font-bold'>ซองวันแรกจำหน่าย </div>
                   <div className={`${styled.textDetail}`}>: {dataStamp?.sellDayOne}</div>
                 </li>
                 <li className='flex gap-3'>
-                  <div className='min-w-[110px] font-bold'>ผู้ประกอบแบบ </div>
+                  <div className='min-w-[120px] font-bold'>ผู้ประกอบแบบ </div>
                   <div className={`${styled.textDetail}`}>: {dataStamp?.author}</div>
                 </li>
               </ul>

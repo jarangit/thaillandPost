@@ -20,14 +20,14 @@ const CatalogsPage = (props: Props) => {
             <div className='text-xl'>สินค้าจากระบบสมาชิกแสตมป์ไทย</div>
             <div className={`flex gap-2 items-center`}>
               <div className='border rounded-md border-gray-light'>
-                <InputSearch />
+                <InputSearch placeholder='ค้นหา'/>
               </div>
 
-              <div className={`cursor-pointer ${viewStamp == "grid" ? "text-blue" : "text-[#9B9898]"}`} onClick={() => setViewStamp("grid")}>
+              <div className={`cursor-pointer ${viewStamp == "list" ? "text-blue" : "text-[#9B9898]"}`} onClick={() => setViewStamp("list")}>
                 <FaThList size={20} />
               </div>
-              <div className={`cursor-pointer ${viewStamp == "list" ? "text-blue" : "text-[#9B9898]"}`} onClick={() => setViewStamp("list")}>
-                <BiGridAlt size={20} />
+              <div className={`cursor-pointer ${viewStamp == "grid" ? "text-blue" : "text-[#9B9898]"}`} onClick={() => setViewStamp("grid")}>
+                <BiGridAlt size={23} />
               </div>
             </div>
           </div>

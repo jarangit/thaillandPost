@@ -10,8 +10,10 @@ const RenderVideo = ({ data }: Props) => {
   const { title, contents } = data
   return (
     <div>
-      <div className={`text-blue text-2xl lg:text-3xl`}>ข่าวสารเกี่ยวกับสินค้าและบริการ</div>
-
+      <div className='flex items-center justify-between w-full mb-6'>
+        <div className='text-3xl text-blue'>ข่าวสารเกี่ยวกับสินค้าและบริการ</div>
+        <div className='text-blue-dark'>10 กรกฎาคม 2565 09.00 น.</div>
+      </div>
       {/* content */}
       <div className={`mt-6`}>
         <div className='text-xl lg:text-3xl'>{title}</div>

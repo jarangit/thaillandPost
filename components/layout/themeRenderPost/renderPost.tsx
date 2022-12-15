@@ -33,9 +33,10 @@ const RenderPost = ({ data }: Props) => {
   const settings = {
     dots: false,
     infinite: true,
+    autoplay: true,
     speed: 500,
     slidesToShow: 6,
-    slidesToScroll: 6,
+    slidesToScroll: 1,
     arrows: true,
     responsive: [
       {
@@ -43,8 +44,6 @@ const RenderPost = ({ data }: Props) => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          infinite: true,
-          dots: true
         }
       },
       {
@@ -85,20 +84,22 @@ const RenderPost = ({ data }: Props) => {
 
         <div className={`col-span-2`}>
           <div className={`text-blue text-xl mb-3`}>ภาพประกอบ</div>
-          {/* <div className={`grid grid-cols-2 lg:grid-cols-6 gap-3 justify-between`}>
+          <div className={`grid grid-cols-2 lg:hidden gap-3 justify-between`}>
               {data.galleries.map((item: any, key: any) => (
                 <div key={key} className={`relative w-full h-[120px] rounded-lg overflow-hidden cursor-pointer`} onClick={() => onOpenImage(key)}>
                 <Image src={item} alt="" fill style={{ objectFit: "cover" }} />
                 </div>
                 ))}
-              </div> */}
-          <Slider {...settings}>
-            {data.galleries.map((item: any, key: any) => (
-              <div key={key} className={`relative w-full min-h-[120px] rounded-lg overflow-hidden cursor-pointer`} onClick={() => onOpenImage(key)}>
-                <Image src={item} alt="" fill style={{ objectFit: "cover", padding:"0 10px"}} />
               </div>
-            ))}
-          </Slider>
+          <div className='max-h-[150px] hidden md:block'>
+            <Slider {...settings}>
+              {data.galleries.map((item: any, key: any) => (
+                <div key={key} className={`relative w-full h-[120px] rounded-lg overflow-hidden cursor-pointer`} onClick={() => onOpenImage(key)}>
+                  <Image src={item} alt="" fill style={{ objectFit: "cover", padding: "0 10px" }} />
+                </div>
+              ))}
+            </Slider>
+          </div>
         </div>
         <div className={`col-span-2`}>
           <div className={`text-blue text-xl mb-3`}>แหล่งอ้างอิง</div>
@@ -125,7 +126,7 @@ const RenderPost = ({ data }: Props) => {
       </div>
 
       {/* light box */}
-      {/* {galleries && isOpenLightBox ? (
+      {galleries && isOpenLightBox ? (
         <Lightbox
           mainSrc={galleries[photoIndex]}
           nextSrc={galleries[(photoIndex + 1) % galleries.length]}
@@ -136,7 +137,7 @@ const RenderPost = ({ data }: Props) => {
           onImageLoadError={() => console.log("loading")}
           mainSrcThumbnail={"1000px"}
         />
-      ) : null} */}
+      ) : null}
     </div>
   )
 }

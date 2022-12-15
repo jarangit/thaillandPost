@@ -41,7 +41,7 @@ const CalendalList = (props: Props) => {
                 <div className='mb-1'>
                   <BsCalendar2Fill size={20} color={"#9B9898"} />
                 </div>
-                <div className='text-blue-dark text-sm'>10 กรกฎาคม 2565 09.00 น.</div>
+                <div className='text-blue-dark text-sm'>10 กรกฎาคม 2565 </div>
               </div>
             </div>
             <div>

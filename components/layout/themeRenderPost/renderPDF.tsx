@@ -41,9 +41,9 @@ const RenderPDF = ({ data }: Props) => {
 
   return (
     <div>
-      <div className='flex items-center justify-between w-full mb-6'>
+      <div className='flex items-center justify-between w-full mb-6 flex-wrap'>
         <div className='text-3xl text-blue'>แบบฟอร์มสมาชิกแสตมป์ไทย</div>
-        <div className='text-blue-dark'>10 กรกฎาคม 2565 09.00 น.</div>
+        <div className='text-blue-dark'>10 กรกฎาคม 2565</div>
       </div>
       <div
         className={`h-screen my-6 max-w-[900px] mx-auto`}

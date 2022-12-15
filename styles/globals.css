@@ -45,3 +45,7 @@ input:focus {
 .slick-dots li.slick-active button:before {
   color:#B9D2DD !important;
 }
+.slick-prev:before,
+.slick-next:before {
+  color: black !important;
+}

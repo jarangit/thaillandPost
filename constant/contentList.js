@@ -26,6 +26,11 @@ export const mockDataContentLists = [
         "/img/product2.png",
         "/img/activity.png",
         "/img/product2.png",
+        "/img/post.png",
+        "/img/product2.png",
+        "/img/product2.png",
+        "/img/activity.png",
+        "/img/product2.png",
       ],
       ref: "https://www.thairath.co.th/news/local/2317640",
       files: [

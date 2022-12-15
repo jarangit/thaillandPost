@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { MdOutlineAttachFile } from 'react-icons/md';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
-
+import Slider from "react-slick";
 type Props = {
   data: any;
 }
@@ -30,12 +30,45 @@ const RenderPost = ({ data }: Props) => {
   useEffect(() => {
 
   }, [photoIndex])
-
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 6,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
   return (
     <div>
-      <div className='flex items-center justify-between w-full mb-6'>
+      <div className='flex items-center justify-between w-full mb-6 flex-wrap'>
         <div className='text-3xl text-blue'>ข่าวสารเกี่ยวกับสินค้าและบริการ</div>
-        <div className='text-blue-dark'>10 กรกฎาคม 2565 09.00 น.</div>
+        <div className='text-blue-dark'>10 กรกฎาคม 2565 </div>
       </div>
       <div className={`grid lg:grid-cols-2 gap-10`}>
         <div className='col-span-2 lg:col-span-1'>
@@ -52,13 +85,20 @@ const RenderPost = ({ data }: Props) => {
 
         <div className={`col-span-2`}>
           <div className={`text-blue text-xl mb-3`}>ภาพประกอบ</div>
-          <div className={`grid grid-cols-2 lg:grid-cols-6 gap-3 justify-between`}>
-            {data.galleries.map((item: any, key: any) => (
-              <div key={key} className={`relative w-full h-[120px] rounded-lg overflow-hidden cursor-pointer`} onClick={() => onOpenImage(key)}>
+          {/* <div className={`grid grid-cols-2 lg:grid-cols-6 gap-3 justify-between`}>
+              {data.galleries.map((item: any, key: any) => (
+                <div key={key} className={`relative w-full h-[120px] rounded-lg overflow-hidden cursor-pointer`} onClick={() => onOpenImage(key)}>
                 <Image src={item} alt="" fill style={{ objectFit: "cover" }} />
+                </div>
+                ))}
+              </div> */}
+          <Slider {...settings}>
+            {data.galleries.map((item: any, key: any) => (
+              <div key={key} className={`relative w-full min-h-[120px] rounded-lg overflow-hidden cursor-pointer`} onClick={() => onOpenImage(key)}>
+                <Image src={item} alt="" fill style={{ objectFit: "cover", padding:"0 10px"}} />
               </div>
             ))}
-          </div>
+          </Slider>
         </div>
         <div className={`col-span-2`}>
           <div className={`text-blue text-xl mb-3`}>แหล่งอ้างอิง</div>
@@ -85,7 +125,7 @@ const RenderPost = ({ data }: Props) => {
       </div>
 
       {/* light box */}
-      {galleries && isOpenLightBox ? (
+      {/* {galleries && isOpenLightBox ? (
         <Lightbox
           mainSrc={galleries[photoIndex]}
           nextSrc={galleries[(photoIndex + 1) % galleries.length]}
@@ -96,7 +136,7 @@ const RenderPost = ({ data }: Props) => {
           onImageLoadError={() => console.log("loading")}
           mainSrcThumbnail={"1000px"}
         />
-      ) : null}
+      ) : null} */}
     </div>
   )
 }

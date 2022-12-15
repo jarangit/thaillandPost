@@ -10,11 +10,6 @@ const StampListItem = ({ data }: Props) => {
   const RenderTags = () => {
     return (
       <>
-
-        {/* <div className='flex justify-between items-center gap-1 text-xs flex-wrap absolute -top-3 -left-1 w-full'>
-          {data.new ? <div><Image src={'/img/icons/new.png'} alt="" width={50} height={50} /></div> : <div></div>}
-          {data.hot ? <div className='mt-2'><Image src={'/img/icons/hot.png'} alt="" width={30} height={30} /></div> : <div></div>}
-        </div> */}
         <div className=' absolute -top-3 -left-1'>
           {data.new ? <div><Image src={'/img/icons/new.png'} alt="" width={50} height={50} /></div> : <div></div>}
         </div>
@@ -30,8 +25,10 @@ const StampListItem = ({ data }: Props) => {
 
       <div className='flex gap-3 justify-between  h-full cursor-pointer drop-shadow-sm border-gray-light  border-b pb-6 lg:border-none lg:pb-0'>
         <div className='flex items-center gap-3'>
-          <div className='relative  bg-blue-light px-2 h-full flex items-center min-w-[120px] lg:min-h-[130px]'>
-            <Image src={data.image} alt="" width={100} height={100} />
+          <div className='relative mb-5 bg-blue-light px-2 py-6'>
+            <div className='relative  h-[100px] w-24'>
+              <Image src={data.image} alt="" fill style={{ objectFit: "contain", }} />
+            </div>
             <RenderTags />
           </div>
 

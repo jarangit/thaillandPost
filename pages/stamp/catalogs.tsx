@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaThList } from 'react-icons/fa'
 import InputSearch from '../../components/input/inputSearch'
 import { BiGridAlt } from 'react-icons/bi'
@@ -6,12 +6,21 @@ import SideBar from '../../components/layout/stamp/sideBar'
 import StampGrid from '../../components/layout/stamp/stampGrid'
 import StampList from '../../components/layout/stamp/stampList'
 import { mockDataStampList } from '../../constant/stampList'
+import Loading from '../../components/items/loading'
+import { useLoading } from '../../hooks/useLoading'
 type Props = {}
 
 const CatalogsPage = (props: Props) => {
   const [viewStamp, setViewStamp] = useState("grid")
+  const { showLoading, setShowLoading }: any = useLoading();
+
+  useEffect(() => {
+  
+  }, [showLoading])
+  
   return (
     <div>
+      <Loading/>
       <div className='myContainer !py-6'>
         <div className='text-xl lg:text-3xl text-blue'>Catalog สินค้าแสตมป์ไทย</div>
         {/* card */}
@@ -20,7 +29,7 @@ const CatalogsPage = (props: Props) => {
             <div className='text-xl'>สินค้าจากระบบสมาชิกแสตมป์ไทย</div>
             <div className={`flex gap-2 items-center`}>
               <div className='border rounded-md border-gray-light'>
-                <InputSearch placeholder='ค้นหา'/>
+                <InputSearch placeholder='ค้นหา' />
               </div>
 
               <div className={`cursor-pointer ${viewStamp == "list" ? "text-blue" : "text-[#9B9898]"}`} onClick={() => setViewStamp("list")}>

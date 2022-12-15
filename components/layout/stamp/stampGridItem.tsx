@@ -31,9 +31,11 @@ const StampGridItem = ({ data }: Props) => {
   return (
     <Link href={`/stamp/${data.id}`}>
       <div className='flex flex-col gap-3 h-full cursor-pointer drop-shadow-sm border-gray-light  border-b pb-6 lg:border-none lg:pb-0'>
-        <div className='relative mb-5 bg-blue-light px-2 py-10'>
-          <Image src={data.image} alt="" width={500} height={100} />
-          <RenderTags />
+        <div className='relative mb-5 bg-blue-light px-2 py-6'>
+          <div className='relative  h-[100px]'>
+            <Image src={data.image} alt="" fill style={{ objectFit: "contain", }} />
+          </div>
+            <RenderTags />
         </div>
         <div className={`text-xs line-clamp-3 hover:text-red transition-all`}>
           {data.name}

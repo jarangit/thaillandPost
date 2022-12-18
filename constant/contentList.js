@@ -2,7 +2,7 @@ export const mockDataContentLists = [
   {
     id: 1,
     title: `ไปรษณีย์ไทย งดส่งสิ่งของระหว่างประเทศไปจีนชั่วคราว (ตัวอย่าง Content รูปภาพและข้อความ)`,
-    date: `10 กรกฎาคม`,
+    date: `10 กรกฎาคม 2565`,
     image: `/img/thumbnail.png`,
     type: "POST",
     data: {
@@ -48,7 +48,7 @@ export const mockDataContentLists = [
   {
     id: 2,
     title: `ไปรษณีย์ไทย งดส่งสิ่งของระหว่างประเทศไปจีนชั่วคราว (ตัวอย่าง Content วิดีโอ)`,
-    date: `10 กรกฎาคม`,
+    date: `10 กรกฎาคม 2565`,
     image: `/img/product.png`,
     type: "VIDEO",
     data: {
@@ -64,7 +64,7 @@ export const mockDataContentLists = [
   {
     id: 3,
     title: `ไปรษณีย์ไทย งดส่งสิ่งของระหว่างประเทศไปจีนชั่วคราว (ตัวอย่าง Content ไฟล์)`,
-    date: `10 กรกฎาคม`,
+    date: `10 กรกฎาคม 2565`,
     image: `/img/product.png`,
     type: "PDF",
     data: [

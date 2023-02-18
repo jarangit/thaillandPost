@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { MdOutlineKeyboardArrowDown, MdOutlineMenu } from 'react-icons/md'
 import Image from 'next/image'
 import Button from '../button/button'
@@ -8,11 +8,21 @@ import { AiFillCaretDown, } from 'react-icons/ai'
 import MobileMenu from './mobileMenu'
 import { listMenu } from '../../constant/menu'
 import Link from 'next/link'
+import { AppContext } from '../../context/appState'
 type Props = {}
 
 
 const Menu = (props: Props) => {
   const [showMBMenu, setShowMBMenu] = useState(false)
+  const { userLocation, setUserLocation }: any = useContext(AppContext)
+  const [showDropdownLanguage, setShowDropdownLanguage] = useState(false)
+
+  const onChangeLanguage = (value: string) => {
+    setUserLocation(value)
+    setShowDropdownLanguage(false)
+  }
+
+
   return (
     <>
       <MobileMenu onClose={() => setShowMBMenu(false)} onShow={showMBMenu} />
@@ -36,7 +46,11 @@ const Menu = (props: Props) => {
                 {listMenu && listMenu.map((item, key) => (
                   <React.Fragment key={key}>
                     <li className={`flex gap-2 items-center cursor-pointer hover:text-blue transition-all`}>
-                      <div>{item.name}</div>
+                      {userLocation == "TH" ? (
+                        <div>{item.nameTH}</div>
+                      ) : (
+                        <div>{item.nameEN}</div>
+                      )}
                       <MdOutlineKeyboardArrowDown />
                     </li>
                   </React.Fragment>
@@ -61,7 +75,7 @@ const Menu = (props: Props) => {
           </div>
           <div className={`flex  gap-2 md:gap-6 items-center cursor-pointer`}>
             <InputSearch />
-            <div className={`text-white flex gap-1 items-center text-md`}>
+            <div className={`text-white flex gap-1 items-center text-md relative`} onClick={() => setShowDropdownLanguage(!showDropdownLanguage)}>
               <Image
                 src='/img/icons/thailand.svg'
                 alt=''
@@ -71,6 +85,10 @@ const Menu = (props: Props) => {
               <div className={`hidden md:block`}>ภาษาไทย</div>
               <div className={` hidden md:block`}>
                 <AiFillCaretDown size={10} color="#ffff" />
+              </div>
+              <div className={`absolute top-5 right-2 bg-white divide-y divide-gray text-black px-3 py-1 drop-shadow-md rounded-sm transition-all ${showDropdownLanguage ? "opacity-100" : "opacity-0"}`}>
+                <div className={`hover:text-red cursor-pointer ${userLocation == "TH" ? "text-red":""}`} onClick={() => onChangeLanguage("TH")}>TH</div>
+                <div className={`hover:text-red cursor-pointer ${userLocation == "EN" ? "text-red":""}`} onClick={() => onChangeLanguage("EN")}>EN</div>
               </div>
             </div>
           </div>

@@ -2,17 +2,18 @@ import React, { createContext, useState, useEffect } from 'react'
 
 export const AppContext = createContext("")
 
-const appState = ({ children }: any) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+const AppState = ({ children }: any) => {
   const [showLoading, setShowLoading] = useState<boolean>(false)
+  const [userLocation, setUserLocation] = useState("TH")
   return (
     // @ts-ignore
     <AppContext.Provider value={{
-      showLoading, setShowLoading
+      showLoading, setShowLoading,
+      userLocation, setUserLocation,
     }}>
       {children}
     </AppContext.Provider>
   )
 }
 
-export default appState
+export default AppState

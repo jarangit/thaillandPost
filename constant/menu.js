@@ -1,14 +1,17 @@
 export const listMenu = [
   {
-    name: 'ข่าวประชาสัมพันธ์',
-    url: '#'
+    nameTH: 'ข่าวประชาสัมพันธ์',
+    url: '#',
+    nameEN:"menu en"
   },
   {
-    name: 'แคตตาล็อก',
-    url: '#'
+    nameTH: 'แคตตาล็อก',
+    url: '#',
+    nameEN:"menu en"
   },
   {
-    name: 'หน่วยงานที่เกี่ยวข้อง',
-    url: '#'
+    nameTH: 'หน่วยงานที่เกี่ยวข้อง',
+    url: '#',
+    nameEN:"menu en"
   },
 ]

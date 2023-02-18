@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
 import Button from '../button/button'
 import { listMenu } from '../../constant/menu'
 import { BsFillArrowRightCircleFill } from 'react-icons/bs'
+import { AppContext } from '../../context/appState'
 
 type Props = {
   onClose: () => void;
@@ -10,6 +11,8 @@ type Props = {
 }
 
 const MobileMenu = ({ onClose, onShow }: Props) => {
+  const { userLocation, setUserLocation }: any = useContext(AppContext)
+
   return (
     <>
       {onShow && <div className={`absolute bg-gray-dark h-screen w-screen z-10 opacity-70`} onClick={onClose} />
@@ -28,7 +31,11 @@ const MobileMenu = ({ onClose, onShow }: Props) => {
           {listMenu && listMenu.map((item, key) => (
             <React.Fragment key={key} >
               <li className={`flex gap-2 items-center cursor-pointer hover:text-blue transition-all`}>
-                <div>{item.name}</div>
+              {userLocation == "TH" ? (
+                        <div>{item.nameTH}</div>
+                      ) : (
+                        <div>{item.nameEN}</div>
+                      )}
                 <div className={`absolute right-2`}>
                   <MdOutlineKeyboardArrowDown />
                 </div>

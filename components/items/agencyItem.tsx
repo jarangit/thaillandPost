@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react'
 import ButtonOutline from '../button/buttonOutline';
+import { useRouter } from 'next/router';
 
 type Props = {
   title: string;
@@ -7,7 +8,7 @@ type Props = {
 }
 
 const AgencyItem = ({ title, desc }: Props) => {
-
+  const { push } = useRouter()
   const styled = useMemo(() => ({
     root: `
     flex items-center justify-between border-b py-3 border-gray-light 
@@ -22,6 +23,8 @@ const AgencyItem = ({ title, desc }: Props) => {
       <div>
         <ButtonOutline
           outlineColor='#D30D2B'
+          onAction={() => push('/contents')}
+
         >
           View
         </ButtonOutline>

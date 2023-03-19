@@ -31,11 +31,11 @@ const MobileMenu = ({ onClose, onShow }: Props) => {
           {listMenu && listMenu.map((item, key) => (
             <React.Fragment key={key} >
               <li className={`flex gap-2 items-center cursor-pointer hover:text-blue transition-all`}>
-              {userLocation == "TH" ? (
-                        <div>{item.nameTH}</div>
-                      ) : (
-                        <div>{item.nameEN}</div>
-                      )}
+                {userLocation == "TH" ? (
+                  <div>{item.nameTH}</div>
+                ) : (
+                  <div>{item.nameEN}</div>
+                )}
                 <div className={`absolute right-2`}>
                   <MdOutlineKeyboardArrowDown />
                 </div>

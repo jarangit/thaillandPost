@@ -6,6 +6,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import AppState from '../context/appState';
 export default function App({ Component, pageProps }: AppProps) {
+
+ 
+
   return (
     <AppState>
       <Layout>

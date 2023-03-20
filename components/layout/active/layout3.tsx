@@ -11,7 +11,7 @@ const Layout3 = (props: Props) => {
   return (
     <>
       <div>
-        <Banner />
+        <Banner data={undefined} />
         <div className='myContainer !-mt-[250px]'>
           <div className=''>
             <CardList />

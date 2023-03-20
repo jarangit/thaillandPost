@@ -5,7 +5,7 @@ import PostSection from '../components/sections/postSection'
 import { AppContext } from '../context/appState'
 import { contentList, layoutActive } from '../service/post-th'
 import Layout1 from '../components/layout/active/layout1'
-import { mockLayoutActive } from './contents/mocks/mockLayoutActive'
+import { mockLayoutActive } from '../constant/mocks/mockLayoutActive'
 import Layout2 from './layout2'
 import Layout3 from './layout3'
 

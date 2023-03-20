@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "constant/banner.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "constant/banner.js", "constant/mocks/mockLayoutActive.js"],
   "exclude": ["node_modules"]
 }

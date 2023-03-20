@@ -2,9 +2,11 @@ import React from 'react'
 import AgencyList from '../card/agencyList'
 import DownloadTable from '../card/downloadTable'
 
-type Props = {}
+type Props = {
+  data:any;
+}
 
-const DownloadAndAgencySection = (props: Props) => {
+const DownloadAndAgencySection = ({data}: Props) => {
   return (
     <>
       <div className="myContainer p-6 grid grid-cols-3 gap-4 !mb-6 !pb-6">

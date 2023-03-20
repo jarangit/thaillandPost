@@ -3,10 +3,12 @@ import Image from 'next/image'
 import Slider from 'react-slick'
 import { dataBanner } from '../../constant/banner'
 import BannerMB from './bannerMobile'
-type Props = {}
+type Props = {
+  data:any;
+}
 
 
-const Banner = (props: Props) => {
+const Banner = ({data}: Props) => {
   const settings = {
     dots: true,
     infinite: true,

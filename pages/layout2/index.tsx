@@ -7,9 +7,11 @@ import BannerTemplate2 from '../../components/template2/banner'
 import CalendalList from '../../components/template2/calendalList'
 import GridContents from '../../components/template2/gridContents'
 
-type Props = {}
+type Props = {
+  data:any
+}
 
-const Layout2Page = (props: Props) => {
+const Layout2Page = ({data}: Props) => {
   return (
     <div>
       <BannerTemplate2 />

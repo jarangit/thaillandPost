@@ -5,9 +5,11 @@ import CardList from '../../components/template3/cardList'
 import NewsList from '../../components/template3/newsList'
 import ProductList from '../../components/template3/productList'
 
-type Props = {}
+type Props = {
+  data: any
+}
 
-const Layout3Page = (props: Props) => {
+const Layout3Page = ({ data }: Props) => {
   return (
     <div>
       <Banner />

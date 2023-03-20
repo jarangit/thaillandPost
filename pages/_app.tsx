@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <link rel="icon" href="/img/logo.png" />
           <link rel="apple-touch-icon" href="/img/logo.png" />
         </Head>
-        <Component {...pageProps} />
+        <Component {...pageProps} defaultImage={`/img/defaultImage.png`}/>
       </Layout>
     </AppState>
   )

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React, { useMemo } from 'react'
+import ImageCustom from '../customs/ImageCustom';
 
 type Props = {
   title: string;
@@ -23,7 +24,7 @@ const PostCard = ({ title, desc, image, createdAt }: Props) => {
   return (
     <div className={`${styled.root}`}>
       <div className={`${styled.boxImage}`}>
-        <Image
+        <ImageCustom
           src={image}
           alt=""
           fill

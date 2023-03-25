@@ -12,16 +12,8 @@ import Layout3 from './layout3'
 export default function Home() {
   const [data, setData] = useState<any>()
   const getData = async () => {
-    const res = await contentList({
-      contentNameEn: "",
-      contentNameTh: "",
-      contentTypeId: "",
-      count: "",
-      page: "",
-      size: "",
-      sortBy: "",
-      sortOrder: ""
-    })
+    const res = await layoutActive()
+    console.log('%cMyProject%cline:15%cres', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(131, 175, 155);padding:3px;border-radius:2px', res)
   }
   useEffect(() => {
     setData(mockLayoutActive)
